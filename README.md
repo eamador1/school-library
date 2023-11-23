@@ -19,7 +19,6 @@
 
 # 📖 [SCHOOL-LIBRARY] <a name="about-project"></a>
 
-> In this project, I finish creating the remaining classes for the school library and create the associations between them.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -29,9 +28,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[ CREATE CLASS NAMED PERSON]**
-- **[CREATE CLASS NAMED STUDENT]**
-- **[CREATE CLASS NAMED TEACHER]**
+- **[ CREATE CLASS NAMED NAMEABLE]**
+- **[CREATE CLASS NAMED DECORATOR]**
+- **[CREATE CLASS NAMED CAPITALIZE_DECORATOR]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -61,9 +60,6 @@ Clone this repository to your desired folder:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-- [ ] **[Add basic UI]**
-- [ ] **[Unit Tests]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
