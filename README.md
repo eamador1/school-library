@@ -18,8 +18,7 @@
 
 
 # 📖 [SCHOOL-LIBRARY] <a name="about-project"></a>
-
-> In this project, I use the Decorator design pattern to correct the names of people.
+In this project, I finish creating the remaining classes for the school library and create the associations between them.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -62,7 +61,6 @@ Clone this repository to your desired folder:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Set up associations]**
 - [ ] **[Add basic UI]**
 - [ ] **[Unit Tests]**
 
