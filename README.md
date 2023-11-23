@@ -19,7 +19,8 @@
 
 # 📖 [SCHOOL-LIBRARY] <a name="about-project"></a>
 
-> In this project, I optimize some slow queries in my database
+> In this project, I finish creating the remaining classes for the school library and create the associations between them.
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -61,9 +62,6 @@ Clone this repository to your desired folder:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Add Database Schema Diagram]**
-- [ ] **[Use the Decorator design pattern ]**
-- [ ] **[Set up associations]**
 - [ ] **[Add basic UI]**
 - [ ] **[Unit Tests]**
 
