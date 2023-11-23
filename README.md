@@ -18,7 +18,7 @@
 
 
 # 📖 [SCHOOL-LIBRARY] <a name="about-project"></a>
-
+In this project, I finish creating the remaining classes for the school library and create the associations between them.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -60,6 +60,9 @@ Clone this repository to your desired folder:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[Add basic UI]**
+- [ ] **[Unit Tests]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
