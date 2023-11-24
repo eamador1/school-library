@@ -14,15 +14,15 @@ class App
     @rentals = []
   end
 
-  def list_books
+  def list_all_books
     @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
   end
 
-  def list_people
+  def list_all_people
     @people.each { |person| puts "#{person.class}: Name: #{person.name}, Id: #{person.id}, Age: #{person.age}" }
   end
 
-  def create_person
+  def create_a_person
     puts 'Do you want to create a student (1) or a Teacher (2)? [Input the number]: '
     person_type = gets.chomp
 
@@ -70,7 +70,7 @@ class App
     Teacher.new(name, age, specialization)
   end
 
-  def create_book
+  def create_a_book
     print 'Title: '
     title = gets.chomp
 
@@ -81,7 +81,7 @@ class App
     puts 'Book created succesfully'
   end
 
-  def create_rental
+  def create_a_rental
     puts 'Select a book from the following list by number: '
     @books.each_with_index { |book, index| puts "#{index}) #{book.title}" }
 
@@ -99,7 +99,7 @@ class App
     puts 'Rental created succesfully'
   end
 
-  def list_rentals_for_person
+  def list_all_rentals_for_given_person_id
     print 'Enter person id: '
     person_id = gets.chomp.to_i
 
@@ -114,3 +114,9 @@ class App
       end
     end
   end
+
+  def exit_app
+    puts 'Exiting the program'
+    exit
+  end
+end
