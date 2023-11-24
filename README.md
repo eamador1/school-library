@@ -18,7 +18,7 @@
 
 
 # 📖 [SCHOOL-LIBRARY] <a name="about-project"></a>
-In this project, I finish creating the remaining classes for the school library and create the associations between them.
+In this project, I create a form of UI for the school library app. This way it can be invoked as an executable and not something you use in IRB exclusively.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -61,7 +61,6 @@ Clone this repository to your desired folder:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Add basic UI]**
 - [ ] **[Unit Tests]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
