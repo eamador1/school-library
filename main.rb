@@ -1,14 +1,6 @@
 require_relative 'app'
 
-CHOICES = {
-  1 => :list_all_books,
-  2 => :list_all_people,
-  3 => :create_a_person,
-  4 => :create_a_book,
-  5 => :create_a_rental,
-  6 => :list_all_rentals_for_given_person_id,
-  7 => :exit_app
-}.freeze
+ 
 
 def display_menu
   puts "\nPlease choose an option by enteringf a number: "
