@@ -49,6 +49,15 @@ Clone this repository to your desired folder:
   cd school-library
   git clone git@github.com:eamador1/school-library.git
 
+  ### Install <a name="install">
+
+- To retrieve the dependencies of this project, run `bundle install`
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+ ### Usage <a name="usage">
+To make use of this project on the console, kindly run `ruby main.rb`
+
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Erwin Amador**
