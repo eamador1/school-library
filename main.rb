@@ -1,9 +1,7 @@
 require_relative 'app'
 
- 
-
 def display_menu
-  puts "Please choose an option by entering a number: "
+  puts 'Please choose an option by entering a number: '
   CHOICES.each { |key, value| puts "#{key} - #{value.to_s.tr('_', ' ')}" }
   gets.chomp.to_i
 end
