@@ -37,6 +37,8 @@ In this project, I create a form of UI for the school library app. This way it c
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
+### PRE-REQUISITE
+
 In order to run this project you need:
 
  VS_CODE 
@@ -56,6 +58,7 @@ Clone this repository to your desired folder:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
  ### Usage <a name="usage">
+
 To make use of this project on the console, kindly run `ruby main.rb`
 
 ## 👥 Authors <a name="authors"></a>
