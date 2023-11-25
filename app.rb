@@ -28,11 +28,11 @@ class App
 
     case person_type
     when '1'
-      student = create_student
+      student = create_a_student
       @people << student
       puts 'Student created succesfully'
     when '2'
-      teacher = create_teacher
+      teacher = create_a_teacher
       @people << teacher
       puts 'Teacher created succesfully'
     else
@@ -40,7 +40,7 @@ class App
     end
   end
 
-  def create_student
+  def create_a_student
     print 'Name: '
     name = gets.chomp
 
@@ -57,7 +57,7 @@ class App
     Student.new(name, age, classroom, parent_permission: parent_permission)
   end
 
-  def create_teacher
+  def create_a_teacher
     print 'Name: '
     name = gets.chomp
 
