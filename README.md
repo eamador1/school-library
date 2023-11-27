@@ -18,7 +18,7 @@
 
 
 # 📖 [SCHOOL-LIBRARY] <a name="about-project"></a>
-In this project, I create a form of UI for the school library app. This way it can be invoked as an executable and not something you use in IRB exclusively.
+In this project, we use our newly acquired knowledge and refactor our previous code.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -28,9 +28,10 @@ In this project, I create a form of UI for the school library app. This way it c
 
 ### Key Features <a name="key-features"></a>
 
-- **[ CREATE CLASS NAMED NAMEABLE]**
-- **[CREATE CLASS NAMED DECORATOR]**
-- **[CREATE CLASS NAMED CAPITALIZE_DECORATOR]**
+- **[CREATE MODULE NAMED CREATE_INSTANCES_MODULE]**
+- **[CREATE MODULE NAMED DISPLAY_MODULE]**
+- **[CREATE MODULE NAMED MENU_HANDLER_MODULE]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -69,10 +70,23 @@ To make use of this project on the console, kindly run `ruby main.rb`
 - Twitter: [@hokieamador](https://twitter.com/hokieamador)
 - LinkedIn: [hokiemador](https://linkedin.com/in/hokiemador)
 
+👤 **Esteban Palacios**
+
+- GitHub: [@Estete9](https://github.com/Estete9)
+- Twitter: [@NaughTban](https://twitter.com/NaughTban)
+- LinkedIn: [Esteban Palacios](https://www.linkedin.com/in/dev-esteban-palacios/)
+
+👤 **Jose RM**
+
+- GitHub: [@Joramot](https://github.com/joramot)
+- Twitter: [@El_rulis](https://twitter.com/el_rulis)
+- LinkedIn: [jose-RM](https://linkedin.com/in/jose-RM)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
+- [ ] **[Preservation of Data]**
 - [ ] **[Unit Tests]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
