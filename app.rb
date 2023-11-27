@@ -4,119 +4,101 @@ require_relative 'student'
 require_relative 'teacher'
 require_relative 'rental'
 require_relative 'classroom'
+require_relative 'display_module'
 
 class App
+  include DisplayModule
   attr_accessor :books, :people, :rentals
 
   def initialize
     @books = []
     @people = []
     @rentals = []
+  end  
+end
+
+
+
+def create_a_person
+  puts 'Do you want to create a student (1) or a Teacher (2)? [Input the number]: '
+  person_type = gets.chomp
+
+  case person_type
+  when '1'
+    student = create_a_student
+    @people << student
+    puts 'Student created succesfully'
+  when '2'
+    teacher = create_a_teacher
+    @people << teacher
+    puts 'Teacher created succesfully'
+  else
+    puts 'Invalid option'
   end
+end
 
-  def list_all_books
-    @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
-  end
+def create_a_student
+  print 'Name: '
+  name = gets.chomp
 
-  def list_all_people
-    @people.each { |person| puts "#{person.class}: Name: #{person.name}, Id: #{person.id}, Age: #{person.age}" }
-  end
+  print 'Age: '
+  age = gets.chomp.to_i
 
-  def create_a_person
-    puts 'Do you want to create a student (1) or a Teacher (2)? [Input the number]: '
-    person_type = gets.chomp
+  print 'Classroom: '
+  classroom_name = gets.chomp
+  classroom = Classroom.new(classroom_name)
 
-    case person_type
-    when '1'
-      student = create_a_student
-      @people << student
-      puts 'Student created succesfully'
-    when '2'
-      teacher = create_a_teacher
-      @people << teacher
-      puts 'Teacher created succesfully'
-    else
-      puts 'Invalid option'
-    end
-  end
+  print 'Has parent permission? [Y/N]: '
+  parent_permission = gets.chomp.downcase == 'y'
 
-  def create_a_student
-    print 'Name: '
-    name = gets.chomp
+  Student.new(name, age, classroom, parent_permission: parent_permission)
+end
 
-    print 'Age: '
-    age = gets.chomp.to_i
+def create_a_teacher
+  print 'Name: '
+  name = gets.chomp
 
-    print 'Classroom: '
-    classroom_name = gets.chomp
-    classroom = Classroom.new(classroom_name)
+  print 'Age: '
+  age = gets.chomp.to_i
 
-    print 'Has parent permission? [Y/N]: '
-    parent_permission = gets.chomp.downcase == 'y'
+  print 'Specialization: '
+  specialization = gets.chomp
 
-    Student.new(name, age, classroom, parent_permission: parent_permission)
-  end
+  Teacher.new(name, age, specialization)
+end
 
-  def create_a_teacher
-    print 'Name: '
-    name = gets.chomp
+ create_a_book
+  print 'Title: '
+  title = gets.chomp
 
-    print 'Age: '
-    age = gets.chomp.to_i
+  print 'Author: '
+  author = gets.chomp
 
-    print 'Specialization: '
-    specialization = gets.chomp
+  @books << Book.new(title, author)
+  puts 'Book created succesfully'
+end
 
-    Teacher.new(name, age, specialization)
-  end
+def create_a_rental
+  puts 'Select a book from the following list by number: '
+  @books.each_with_index { |book, index| puts "#{index}) #{book.title}" }
 
-  def create_a_book
-    print 'Title: '
-    title = gets.chomp
+  book_index = gets.chomp.to_i
 
-    print 'Author: '
-    author = gets.chomp
+  puts 'Select a person from the following list by number: '
+  @people.each_with_index { |person, index| puts "#{index}) #{person.name}" }
 
-    @books << Book.new(title, author)
-    puts 'Book created succesfully'
-  end
+  person_index = gets.chomp.to_i
 
-  def create_a_rental
-    puts 'Select a book from the following list by number: '
-    @books.each_with_index { |book, index| puts "#{index}) #{book.title}" }
+  print 'Date: '
+  date = gets.chomp
 
-    book_index = gets.chomp.to_i
+  @rentals << Rental.new(date, @books[book_index], @people[person_index])
+  puts 'Rental created succesfully'
+end
 
-    puts 'Select a person from the following list by number: '
-    @people.each_with_index { |person, index| puts "#{index}) #{person.name}" }
 
-    person_index = gets.chomp.to_i
 
-    print 'Date: '
-    date = gets.chomp
-
-    @rentals << Rental.new(date, @books[book_index], @people[person_index])
-    puts 'Rental created succesfully'
-  end
-
-  def list_all_rentals_for_given_person_id
-    print 'Enter person id: '
-    person_id = gets.chomp.to_i
-
-    rentals = @rentals.select { |rental| rental.person.id == person_id }
-
-    if rentals.empty?
-      puts 'No rentals found for the given person id.'
-    else
-      puts 'Rentals: '
-      rentals.each do |rental|
-        puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
-      end
-    end
-  end
-
-  def exit_app
-    puts 'Exiting the program'
-    exit
-  end
+def exit_app
+  puts 'Exiting the program'
+  exit
 end
