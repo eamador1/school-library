@@ -1,4 +1,3 @@
-require 'pry'
 require_relative 'app'
 
 CHOICES = {
@@ -19,8 +18,6 @@ end
 
 def handle_option(app, option)
   choice = CHOICES[option]
-  binding.pry
-  choice
   if choice
     app.send(choice)
   else
