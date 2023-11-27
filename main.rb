@@ -34,4 +34,9 @@ def main
   end
 end
 
+def exit_app
+  puts 'Exiting the program'
+  exit
+end
+
 main
