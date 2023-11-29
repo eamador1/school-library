@@ -22,11 +22,20 @@ class Rental
 
   def to_h
     {
-      'id' => @id,
-      'name' => @name,
-      'age' => @age,
-      'parent_permission' => @parent_permission
+      date: @date,
+      book: @book.to_h,
+      person: @person.to_h
     }
+  end
+
+  def self.from_h(hash)
+    book_data = hash['book']
+    book = Book.from_h(book_data)
+
+    person_data = hash['person']
+    person = Person.from_h(person_data)
+
+    Rental.new(hash['date'], book, person)
   end
 
   def to_json(*_args)

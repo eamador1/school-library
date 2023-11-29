@@ -35,6 +35,29 @@ class Person < Nameable
     @name
   end
 
+  def to_json(*_args)
+    {
+      id: @id,
+      name: @name,
+      age: @age,
+      parent_permission: @parent_permission,
+      rentals: @rentals.map(&:to_h)
+    }.to_json
+  end
+
+  def self.from_json(json_data)
+    data = JSON.parse(json_data)
+    person = new(data['name'], data['age'], parent_permission: data['parent_permission'])
+    person.instance_variable_set(:@id, data['id'])
+
+    data['rentals'].each do |rental_data|
+      rental = Rental.new(rental_data['date'], rental_data['book'], person)
+      person.rentals << rental
+    end
+
+    person
+  end
+
   private
 
   def of_age?

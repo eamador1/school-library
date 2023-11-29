@@ -65,16 +65,16 @@ module CreateInstancesModule
   def create_a_rental
     file_book_json = list_all_books
     book_index = gets.chomp.to_i
-    book_data = file_book_json[book_index]
-    puts selected_book = Book.new(book_data['title'], book_data['author'])
+    puts book_data = file_book_json[book_index]
+    puts selected_book = Book.from_json(book_data.to_json)
 
     file_people_json = list_all_people
     person_index = gets.chomp.to_i
     person_data = file_people_json[person_index]
     puts selected_person = Person.new(
       person_data['name'],
-      person_data['age']
-      # person_data['parent_permission']
+      person_data['age'],
+      parent_permission: person_data['parent_permission']
     )
     print 'Date: '
     date = gets.chomp
@@ -86,9 +86,8 @@ module CreateInstancesModule
 
   def save_rental(rental)
     FileHandler.load_or_create('rentals.json')
-    rentals_obj = { date: rental.date, title: rental.book.title, author: rental.book.author,
-                    person_id: rental.person.id }
-    FileHandler.save('rentals.json', rentals_obj)
+    rentals_json = rental.to_json
+    FileHandler.save('rentals.json', rentals_json)
     puts 'Rental saved successfully.'
   end
 end
