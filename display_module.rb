@@ -1,10 +1,18 @@
 module DisplayModule
   def list_all_books
-    @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
+    puts 'Select a book from the following list by number: '
+    file_book_json = File.open('books.json', 'r') { |file| JSON.parse(file.read) }
+    file_book_json.each_with_index do |book, index|
+      puts "#{index}) Title: '#{book['title']}', Author: #{book['author']}"
+    end
   end
 
   def list_all_people
-    @people.each { |person| puts "#{person.class}: Name: #{person.name}, Id: #{person.id}, Age: #{person.age}" }
+    puts 'Select a person from the following list by number: '
+    file_people_json = File.open('people.json', 'r') { |file| JSON.parse(file.read) }
+    file_people_json.each_with_index do |person, index|
+      puts "#{index}) [#{person['type']}] Name: #{person['name']}, ID: #{person['id']}, Age: #{person['age']}"
+    end
   end
 
   def list_all_rentals_for_given_person_id
