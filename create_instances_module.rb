@@ -73,7 +73,7 @@ module CreateInstancesModule
     person_data = file_people_json[person_index]
     puts selected_person = Person.new(
       person_data['name'],
-      person_data['age'],
+      person_data['age']
       # person_data['parent_permission']
     ).to_json
     print 'Date: '
