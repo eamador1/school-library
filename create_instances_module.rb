@@ -63,7 +63,6 @@ module CreateInstancesModule
   end
 
   def save_books_to_json
-
     stored_books = []
 
     if File.exist?('books.json')
@@ -74,15 +73,12 @@ module CreateInstancesModule
     new_books = @books.map do |book|
       { title: book.title, author: book.author }
     end
-    
+
     all_books = stored_books + new_books
-    
 
     json_data = JSON.pretty_generate(all_books)
 
-    File.open('books.json', 'w') do |file|
-      file.write(json_data)
-    end
+    File.write('books.json', json_data)
   end
 
   def create_a_rental
