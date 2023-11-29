@@ -74,7 +74,7 @@ module CreateInstancesModule
       { title: book.title, author: book.author }
     end
 
-    all_books = stored_books + new_books
+    all_books = stored_books | new_books
 
     json_data = JSON.pretty_generate(all_books)
 

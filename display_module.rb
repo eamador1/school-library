@@ -1,4 +1,4 @@
-module DisplayModule7
+module DisplayModule
   # index = 0
   # @books.each do |book|
   #  print "#{index}) " if indexed
