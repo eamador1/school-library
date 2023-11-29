@@ -7,6 +7,7 @@ require_relative 'classroom'
 require_relative 'display_module'
 require_relative 'create_instances_module'
 require_relative 'menu_handler_module'
+require_relative 'file_handler'
 
 class App
   include DisplayModule
@@ -17,6 +18,6 @@ class App
   def initialize
     @books = []
     @people = []
-    @rentals = []
+    @rentals = FileHandler.load_or_create('rentals.json')
   end
 end
