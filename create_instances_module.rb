@@ -66,7 +66,7 @@ module CreateInstancesModule
     file_book_json = list_all_books
     book_index = gets.chomp.to_i
     book_data = file_book_json[book_index]
-    puts selected_book = Book.new(book_data['title'], book_data['author']).to_json
+    puts selected_book = Book.new(book_data['title'], book_data['author'])
 
     file_people_json = list_all_people
     person_index = gets.chomp.to_i
@@ -75,7 +75,7 @@ module CreateInstancesModule
       person_data['name'],
       person_data['age']
       # person_data['parent_permission']
-    ).to_json
+    )
     print 'Date: '
     date = gets.chomp
 

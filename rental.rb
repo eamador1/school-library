@@ -1,5 +1,5 @@
 class Rental
-  attr_accessor :date
+  attr_reader :date, :book, :person
 
   def initialize(date, book, person)
     @date = date
@@ -31,9 +31,9 @@ class Rental
 
   def to_json(*_args)
     {
-      'date' => @date,
-      'book' => @book,
-      'person' => @person
+      date => @date,
+      book => @book,
+      person => @person
     }.to_json
   end
 
