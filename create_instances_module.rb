@@ -1,3 +1,5 @@
+require 'json'
+
 module CreateInstancesModule
   def create_a_person
     puts 'Do you want to create a student (1) or a Teacher (2)? [Input the number]: '
@@ -56,6 +58,31 @@ module CreateInstancesModule
 
     @books << Book.new(title, author)
     puts 'Book created succesfully'
+
+    save_books_to_json
+  end
+
+  def save_books_to_json
+
+    stored_books = []
+
+    if File.exist?('books.json')
+      existing_books_json = File.read('books.json')
+      stored_books = JSON.parse(existing_books_json) unless existing_books_json.empty?
+    end
+
+    new_books = @books.map do |book|
+      { title: book.title, author: book.author }
+    end
+    
+    all_books = stored_books + new_books
+    
+
+    json_data = JSON.pretty_generate(all_books)
+
+    File.open('books.json', 'w') do |file|
+      file.write(json_data)
+    end
   end
 
   def create_a_rental
