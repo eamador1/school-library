@@ -1,0 +1,29 @@
+{
+    "json_class": "Student",
+    "person_data": [
+      {
+        "id": 988,
+        "name": "test",
+        "age": 33,
+        "parent_permission": true
+      }
+    ],
+    "classroom": {
+      "json_class": "Classroom",
+      "label": "1",
+      "students": [
+        {
+          "json_class": "Student",
+          "person_data": [
+            {
+              "id": 988,
+              "name": "test",
+              "age": 33,
+              "parent_permission": true
+            }
+          ],
+          "classroom": "1"
+        }
+      ]
+    }
+  }
