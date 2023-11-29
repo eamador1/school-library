@@ -4,6 +4,9 @@ module DisplayModule
   end
 
   def list_all_people
+    # saca del archivo
+    # acutaliza array
+    # display information from array
     @people.each { |person| puts "#{person.class}: Name: #{person.name}, Id: #{person.id}, Age: #{person.age}" }
   end
 
