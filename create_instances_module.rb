@@ -5,13 +5,11 @@ module CreateInstancesModule
     puts 'Do you want to create a student (1) or a Teacher (2)? [Input the number]: '
     person_type = gets.chomp
 
-    # name, age, classroom, parent_permission:
-
-
     case person_type
     when '1'
       student = create_a_student
       @people << student
+      save_people_to_file
       puts 'Student created succesfully'
     when '2'
       teacher = create_a_teacher
@@ -28,43 +26,22 @@ module CreateInstancesModule
 
     print 'Age: '
     age = gets.chomp.to_i
-
-    # print 'Classroom: '
-    # classroom_name = gets.chomp
-    # classroom = Classroom.new(classroom_name)
-
     print 'Has parent permission? [Y/N]: '
     parent_permission = gets.chomp.downcase == 'y'
-    student = Student.new(name, age, classroom, parent_permission: parent_permission)
+    Student.new(name, age, classroom, parent_permission: parent_permission)
+  end
 
-    # ####################################################################
-    student_classroom_hash = student.classroom.to_hash
-    # puts 'student_classroom_hash', student_classroom_hash
-    student_classroom_json = JSON.generate(student_classroom_hash)
-    # puts 'student_classroom_json', student_classroom_json
-    student_classroom_rehash = JSON.parse(student_classroom_json)
-    # puts 'student_classroom_rehash', student_classroom_rehash
-    current_classroom = Classroom.from_hash(student_classroom_hash, @classroom.students)
-    puts 'classroom from hash', current_classroom.inspect
+  def save_people_to_file
+    stored_people = []
+    if File.exist?('people.json')
+      people_in_file = File.read('people.json')
+      stored_people = JSON.parse(people_in_file) unless people_in_file.empty?
+    end
 
-
-    student_hash = student.to_hash
-    puts 'student_hash', student_hash
-
-
-    student_json = JSON.generate(student_hash)
-
-    # TODO write to file people.json
-
-    puts 'student_json', student_json
-    student_rehash = JSON.parse(student_json, create_additions: true)
-    puts 'student_rehash', student_rehash
-    # puts 'student_rehash type', student_rehash.class.name
-    student_obj = Student.from_hash(student_rehash, @classroom)
-    puts "student_obj #{student_obj.inspect} of type #{student_obj.class.name}"
-    # ####################################################################
-
-    student
+    new_people = @people.map(&:to_hash)
+    all_people = new_people + stored_people
+    people_json = JSON.pretty_generate(all_people)
+    File.write('people.json', people_json)
   end
 
   def create_a_teacher

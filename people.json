@@ -1,0 +1,102 @@
+[
+  {
+    "json_class": "Student",
+    "id": 648,
+    "name": "test4",
+    "age": 22,
+    "parent_permission": true,
+    "classroom": {
+      "json_class": "Classroom",
+      "label": "1",
+      "students": [
+        {
+          "json_class": "Student",
+          "id": 648,
+          "name": "test4",
+          "age": 22,
+          "parent_permission": true,
+          "classroom": "1"
+        }
+      ]
+    }
+  },
+  {
+    "json_class": "Student",
+    "id": 701,
+    "name": "test",
+    "age": 22,
+    "parent_permission": true,
+    "classroom": {
+      "json_class": "Classroom",
+      "label": "1",
+      "students": [
+        {
+          "json_class": "Student",
+          "id": 701,
+          "name": "test",
+          "age": 22,
+          "parent_permission": true,
+          "classroom": "1"
+        },
+        {
+          "json_class": "Student",
+          "id": 546,
+          "name": "test2",
+          "age": 123,
+          "parent_permission": true,
+          "classroom": "1"
+        }
+      ]
+    }
+  },
+  {
+    "json_class": "Student",
+    "id": 546,
+    "name": "test2",
+    "age": 123,
+    "parent_permission": true,
+    "classroom": {
+      "json_class": "Classroom",
+      "label": "1",
+      "students": [
+        {
+          "json_class": "Student",
+          "id": 701,
+          "name": "test",
+          "age": 22,
+          "parent_permission": true,
+          "classroom": "1"
+        },
+        {
+          "json_class": "Student",
+          "id": 546,
+          "name": "test2",
+          "age": 123,
+          "parent_permission": true,
+          "classroom": "1"
+        }
+      ]
+    }
+  },
+  {
+    "json_class": "Student",
+    "id": 701,
+    "name": "test",
+    "age": 22,
+    "parent_permission": true,
+    "classroom": {
+      "json_class": "Classroom",
+      "label": "1",
+      "students": [
+        {
+          "json_class": "Student",
+          "id": 701,
+          "name": "test",
+          "age": 22,
+          "parent_permission": true,
+          "classroom": "1"
+        }
+      ]
+    }
+  }
+]

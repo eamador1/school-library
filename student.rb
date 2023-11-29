@@ -1,7 +1,5 @@
 require_relative 'person'
 
-require 'pry'
-
 class Student < Person
   attr_reader :classroom
 
@@ -21,15 +19,10 @@ class Student < Person
   end
 
   def to_hash(exclude_classroom: false)
-    # classroom_hash = classroom.to_hash
-
-    # binding.pry
-    super.merge(classroom_label: exclude_classroom ? classroom.label : classroom.to_hash)
+    super.merge(classroom: exclude_classroom ? classroom.label : classroom.to_hash)
   end
 
   def self.from_hash(hash, classroom)
-    puts 'hash in student.from_hash', hash.inspect
-    puts 'in student.from_hash', hash['name']
     new(
       hash['name'],
       hash['age'],

@@ -5,6 +5,14 @@ module DisplayModule
 
   def list_all_people
     # saca del archivo
+    # create objects from file
+    # puts 'student_json', student_json
+    # student_rehash = JSON.parse(student_json, create_additions: true)
+    # puts 'student_rehash', student_rehash
+    # # puts 'student_rehash type', student_rehash.class.name
+    # student_obj = Student.from_hash(student_rehash, @classroom)
+    # puts "student_obj \#{student_obj.inspect} of type \#{student_obj.class.name}"
+
     # acutaliza array
     # display information from array
     @people.each { |person| puts "#{person.class}: Name: #{person.name}, Id: #{person.id}, Age: #{person.age}" }
