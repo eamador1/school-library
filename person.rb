@@ -37,18 +37,6 @@ class Person < Nameable
     @name
   end
 
-  def to_hash(*)
-    {
-      json_class: self.class.name,
-      id: id,
-      name: name,
-      age: age,
-      parent_permission: parent_permission
-    }
-  end
-
-  def from_hash(hash); end
-
   private
 
   def of_age?
