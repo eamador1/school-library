@@ -39,7 +39,9 @@ module DisplayModule
       end
     end
 
-    @people.each { |person| puts "#{person.class}: Name: #{person.name}, Id: #{person.id}, Age: #{person.age}" }
+    @people.each_with_index do |person, index|
+      puts "#{index}) #{person.class}: Name: #{person.name}, Id: #{person.id}, Age: #{person.age}"
+    end
   end
 
   def list_all_rentals_for_given_person_id

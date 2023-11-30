@@ -1,6 +1,8 @@
+require_relative 'display_module'
 require  'json'
 
 module CreateInstancesModule
+include DisplayModule
   def create_a_person
     puts 'Do you want to create a student (1) or a Teacher (2)? [Input the number]: '
     person_type = gets.chomp
@@ -104,20 +106,36 @@ module CreateInstancesModule
   end
 
   def create_a_rental
-    puts 'Select a book from the following list by number: '
-    @books.each_with_index { |book, index| puts "#{index}) #{book.title}" }
-
+    file_book_json = list_all_books
     book_index = gets.chomp.to_i
+    puts 'book data: ', book_data = file_book_json[book_index]
+    # puts json_book_data = JSON.pretty_generate(book_data)
+    puts selected_book = Book.new(
+      book_data['title'],
+      book_data['author']
+    )
 
-    puts 'Select a person from the following list by number: '
-    @people.each_with_index { |person, index| puts "#{index}) #{person.name}" }
-
+    file_people_json = list_all_people
     person_index = gets.chomp.to_i
-
+    puts 'people data: ', person_data = file_people_json[person_index]
+    puts selected_person = Person.new(
+      person_data['name'],
+      person_data['age'],
+      parent_permission: person_data['parent_permission']
+    )
     print 'Date: '
     date = gets.chomp
 
-    @rentals << Rental.new(date, @books[book_index], @people[person_index])
-    puts 'Rental created succesfully'
+    puts rental = Rental.new(date, selected_book, selected_person)
+    puts rental.to_json
+    # save_rental(rental)
+    # rental
+  end
+
+  def save_rental(rental)
+    FileHandler.load_or_create('rentals.json')
+    rentals_json = rental.to_json
+    FileHandler.save('rentals.json', rentals_json)
+    puts 'Rental saved successfully.'
   end
 end
