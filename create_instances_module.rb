@@ -22,7 +22,6 @@ module CreateInstancesModule
     else
       puts 'Invalid option'
     end
-    save_people_to_file
   end
 
   def create_a_student(classroom = @classroom)
@@ -58,8 +57,6 @@ module CreateInstancesModule
 
     @books << Book.new(title, author)
     puts 'Book created succesfully'
-
-    save_books_to_json
   end
 
   def create_a_rental
@@ -87,6 +84,5 @@ module CreateInstancesModule
     date = gets.chomp
 
     @rentals << Rental.new(date, select_book, person_data)
-    save_rentals_to_file
   end
 end

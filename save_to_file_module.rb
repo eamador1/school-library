@@ -1,3 +1,5 @@
+require 'pry'
+
 module SaveToFileModule
   def save_people_to_file
     stored_people = []
@@ -8,14 +10,10 @@ module SaveToFileModule
 
     new_people = @people.map(&:to_hash)
     new_people.each do |new_person|
-      existing_person = stored_people.find { |p| p['id'] == new_person['id'] }
-      if existing_person
-        existing_person.merge!(new_person)
-      else
-        stored_people << new_person
-      end
+      stored_people << new_person
     end
-    stored_people
+    people_json = JSON.pretty_generate(stored_people)
+    File.write('people.json', people_json)
   end
 
   def save_books_to_json
@@ -38,7 +36,8 @@ module SaveToFileModule
         stored_books << new_book
       end
     end
-    stored_books
+    json_data = JSON.pretty_generate(stored_books)
+    File.write('books.json', json_data)
   end
 
   def save_rentals_to_file
@@ -57,6 +56,7 @@ module SaveToFileModule
         stored_rentals << rental
       end
     end
-    stored_rentals
+    rentals_json = JSON.pretty_generate(stored_rentals)
+    File.write('rentals.json', rentals_json)
   end
 end

@@ -34,25 +34,9 @@ module MenuHandlerModule
     exit
   end
 
-  def write_to_people(stored_people)
-    people_json = JSON.pretty_generate(stored_people)
-    File.write('people.json', people_json)
-  end
-
-  def write_to_books(stored_books)
-    json_data = JSON.pretty_generate(stored_books)
-    File.write('books.json', json_data)
-  end
-
-  def write_to_rentals(stored_rentals)
-    rentals_json = JSON.pretty_generate(stored_rentals)
-    File.write('rentals.json', rentals_json)
-  end
-
   def write_to_files
-    books_to_array = save_books_to_json
-    #write_to_people
-    write_to_books(books_to_array)
-    #write_to_rentals
+    save_people_to_file
+    save_books_to_json
+    save_rentals_to_file
   end
 end
