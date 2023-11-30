@@ -109,7 +109,6 @@ module CreateInstancesModule
     file_book_json = list_all_books
     book_index = gets.chomp.to_i
     puts 'book data: ', book_data = file_book_json[book_index]
-    # puts json_book_data = JSON.pretty_generate(book_data)
     puts selected_book = Book.new(
       book_data['title'],
       book_data['author']
@@ -127,7 +126,6 @@ module CreateInstancesModule
     date = gets.chomp
 
     puts rental = Rental.new(date, selected_book, selected_person)
-    puts rental.to_json
     # save_rental(rental)
     # rental
   end
