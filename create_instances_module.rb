@@ -109,15 +109,15 @@ module CreateInstancesModule
     file_book_json = list_all_books
     book_index = gets.chomp.to_i
     puts 'book data: ', book_data = file_book_json[book_index]
-    puts selected_book = Book.new(
+    puts 'select book: ', select_book = Book.new(
       book_data['title'],
       book_data['author']
     )
 
     file_people_json = list_all_people
     person_index = gets.chomp.to_i
-    puts 'people data: ', person_data = file_people_json[person_index]
-    puts selected_person = Person.new(
+    puts 'people data: ', person_data = file_people_json[person_index].to_hash
+    puts 'select person: ', selected_person = People.new(
       person_data['name'],
       person_data['age'],
       parent_permission: person_data['parent_permission']
@@ -126,14 +126,26 @@ module CreateInstancesModule
     date = gets.chomp
 
     puts rental = Rental.new(date, selected_book, selected_person)
-    # save_rental(rental)
-    # rental
+    save_rentals_to_file
   end
 
-  def save_rental(rental)
-    FileHandler.load_or_create('rentals.json')
-    rentals_json = rental.to_json
-    FileHandler.save('rentals.json', rentals_json)
-    puts 'Rental saved successfully.'
+  def save_rentals_to_file
+    stored_rentals = []
+    if File.exist?('rentals.json')
+      rentals_in_file = File.read('people.json')
+      stored_rentals = JSON.parse(rentals_in_file) unless rentals_in_file.empty?
+    end
+
+    new_rental = @rentals.map(&:to_hash)
+    new_rental.each do |new_rental|
+      existing_person = stored_rentals.find { |p| p['id'] == new_rental['id'] }
+      if existing_person
+        existing_person.merge!(new_rental)
+      else
+        stored_rentals << new_rental
+      end
+    end
+    rentals_json = JSON.pretty_generate(stored_rentals)
+    File.write('people.json', rentals_json)
   end
 end
