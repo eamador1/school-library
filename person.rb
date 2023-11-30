@@ -47,6 +47,8 @@ class Person < Nameable
     }
   end
 
+  def from_hash(hash); end
+
   private
 
   def of_age?

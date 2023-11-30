@@ -9,7 +9,6 @@ module CreateInstancesModule
     when '1'
       student = create_a_student
       @people << student
-      save_people_to_file
       puts 'Student created succesfully'
     when '2'
       teacher = create_a_teacher
@@ -18,6 +17,27 @@ module CreateInstancesModule
     else
       puts 'Invalid option'
     end
+    save_people_to_file
+  end
+
+  def save_people_to_file
+    stored_people = []
+    if File.exist?('people.json')
+      people_in_file = File.read('people.json')
+      stored_people = JSON.parse(people_in_file) unless people_in_file.empty?
+    end
+
+    new_people = @people.map(&:to_hash)
+    new_people.each do |new_person|
+      existing_person = stored_people.find { |p| p['id'] == new_person['id'] }
+      if existing_person
+        existing_person.merge!(new_person)
+      else
+        stored_people << new_person
+      end
+    end
+    people_json = JSON.pretty_generate(stored_people)
+    File.write('people.json', people_json)
   end
 
   def create_a_student(classroom = @classroom)
@@ -29,19 +49,6 @@ module CreateInstancesModule
     print 'Has parent permission? [Y/N]: '
     parent_permission = gets.chomp.downcase == 'y'
     Student.new(name, age, classroom, parent_permission: parent_permission)
-  end
-
-  def save_people_to_file
-    stored_people = []
-    if File.exist?('people.json')
-      people_in_file = File.read('people.json')
-      stored_people = JSON.parse(people_in_file) unless people_in_file.empty?
-    end
-
-    new_people = @people.map(&:to_hash)
-    all_people = new_people + stored_people
-    people_json = JSON.pretty_generate(all_people)
-    File.write('people.json', people_json)
   end
 
   def create_a_teacher

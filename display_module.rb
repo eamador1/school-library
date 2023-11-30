@@ -4,17 +4,22 @@ module DisplayModule
   end
 
   def list_all_people
-    # saca del archivo
-    # create objects from file
-    # puts 'student_json', student_json
-    # student_rehash = JSON.parse(student_json, create_additions: true)
-    # puts 'student_rehash', student_rehash
-    # # puts 'student_rehash type', student_rehash.class.name
-    # student_obj = Student.from_hash(student_rehash, @classroom)
-    # puts "student_obj \#{student_obj.inspect} of type \#{student_obj.class.name}"
+    if File.exist?('people.json')
+      people_json = File.read('people.json')
+      if people_json.empty?
+        puts 'The list is empty'
+      else
+        people_hash = JSON.parse(people_json)
+        @people = people_hash.map do |person|
+          if person['json_class'] == 'Student'
+            Student.from_hash(person, @classroom)
+          else
+            Teacher.from_hash(person)
+          end
+        end
+      end
+    end
 
-    # acutaliza array
-    # display information from array
     @people.each { |person| puts "#{person.class}: Name: #{person.name}, Id: #{person.id}, Age: #{person.age}" }
   end
 
