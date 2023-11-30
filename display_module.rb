@@ -29,8 +29,6 @@ module DisplayModule
     stored_books
   end
 
-
-
   def list_all_people
     @people.each { |person| puts "#{person.class}: Name: #{person.name}, Id: #{person.id}, Age: #{person.age}" }
   end

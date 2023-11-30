@@ -74,9 +74,16 @@ module CreateInstancesModule
       { title: book.title, author: book.author }
     end
 
-    all_books = stored_books | new_books
+    new_books.each do |new_book|
+      existing_book = stored_books.find { |b| b['title'] == new_book['title'] }
+      if existing_book
+        existing_book.merge!(new_book)
+      else
+        stored_books << new_book
+      end
+    end
 
-    json_data = JSON.pretty_generate(all_books)
+    json_data = JSON.pretty_generate(stored_books)
 
     File.write('books.json', json_data)
   end
