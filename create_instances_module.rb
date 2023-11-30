@@ -129,10 +129,10 @@ module CreateInstancesModule
     save_rentals_to_file
   end
 
-  def save_rentals_to_file
+  def     
     stored_rentals = []
     if File.exist?('rentals.json')
-      rentals_in_file = File.read('people.json')
+      rentals_in_file = File.read('rentals.json')
       stored_rentals = JSON.parse(rentals_in_file) unless rentals_in_file.empty?
     end
 
@@ -146,6 +146,6 @@ module CreateInstancesModule
       end
     end
     rentals_json = JSON.pretty_generate(stored_rentals)
-    File.write('people.json', rentals_json)
+    File.write('rentals.json', rentals_json)
   end
 end
