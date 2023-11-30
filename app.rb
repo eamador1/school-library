@@ -18,5 +18,6 @@ class App
     @books = []
     @people = []
     @rentals = []
+    @classroom = Classroom.new('1')
   end
 end

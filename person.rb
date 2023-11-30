@@ -5,6 +5,8 @@ require_relative 'trimmer_decorator'
 require_relative 'classroom'
 require_relative 'rental'
 
+require 'pry'
+
 class Person < Nameable
   def initialize(name, age = 'Unknown', parent_permission: true)
     super()
@@ -16,7 +18,7 @@ class Person < Nameable
   end
 
   attr_accessor :name, :age, :rentals
-  attr_reader :id, :classroom
+  attr_reader :id, :classroom, :parent_permission
 
   def classroom=(classroom)
     @classroom = classroom

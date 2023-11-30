@@ -17,24 +17,30 @@ module CreateInstancesModule
     else
       puts 'Invalid option'
     end
+    save_people_to_file
   end
 
-  def create_a_student
-    print 'Name: '
-    name = gets.chomp
+  def save_people_to_file
+    stored_people = []
+    if File.exist?('people.json')
+      people_in_file = File.read('people.json')
+      stored_people = JSON.parse(people_in_file) unless people_in_file.empty?
+    end
 
-    print 'Age: '
-    age = gets.chomp.to_i
-
-    print 'Classroom: '
-    classroom_name = gets.chomp
-    classroom = Classroom.new(classroom_name)
-
-    print 'Has parent permission? [Y/N]: '
-    parent_permission = gets.chomp.downcase == 'y'
-
-    Student.new(name, age, classroom, parent_permission: parent_permission)
+    new_people = @people.map(&:to_hash)
+    new_people.each do |new_person|
+      existing_person = stored_people.find { |p| p['id'] == new_person['id'] }
+      if existing_person
+        existing_person.merge!(new_person)
+      else
+        stored_people << new_person
+      end
+    end
+    people_json = JSON.pretty_generate(stored_people)
+    File.write('people.json', people_json)
   end
+
+
 
   def create_a_teacher
     print 'Name: '
