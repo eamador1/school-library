@@ -1,4 +1,8 @@
+require_relative 'save_to_file_module'
+
 module MenuHandlerModule
+  include SaveToFileModule
+
   CHOICES = {
     1 => :list_all_books,
     2 => :list_all_people,
@@ -26,6 +30,13 @@ module MenuHandlerModule
 
   def exit_app
     puts 'Exiting the program'
+    write_to_files
     exit
+  end
+
+  def write_to_files
+    save_people_to_file
+    save_books_to_json
+    save_rentals_to_file
   end
 end
