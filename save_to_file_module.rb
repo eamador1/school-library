@@ -15,8 +15,7 @@ module SaveToFileModule
         stored_people << new_person
       end
     end
-    people_json = JSON.pretty_generate(stored_people)
-    File.write('people.json', people_json)
+    stored_people
   end
 
   def save_books_to_json
@@ -39,10 +38,7 @@ module SaveToFileModule
         stored_books << new_book
       end
     end
-
-    json_data = JSON.pretty_generate(stored_books)
-
-    File.write('books.json', json_data)
+    stored_books
   end
 
   def save_rentals_to_file
@@ -61,7 +57,6 @@ module SaveToFileModule
         stored_rentals << rental
       end
     end
-    rentals_json = JSON.pretty_generate(stored_rentals)
-    File.write('rentals.json', rentals_json)
+    stored_rentals
   end
 end
