@@ -67,6 +67,8 @@ module CreateInstancesModule
     puts 'Select a book from the following list by number:'
 
     file_book_json = list_all_books
+
+    puts 'Select a book from the following list by number:'
     book_index = gets.chomp.to_i
     book_data = file_book_json[book_index]
     select_book = Book.new(
@@ -77,6 +79,9 @@ module CreateInstancesModule
     puts 'Select a person from the following list by number (not id):'
 
     file_people_json = list_all_people
+
+    puts 'Select a person from the following list by number (not id):'
+
     person_index = gets.chomp.to_i
     person_data = file_people_json[person_index]
     print 'Date: '
