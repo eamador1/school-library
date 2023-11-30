@@ -1,3 +1,592 @@
 [
-
+  {
+    "date": "2023-11-40",
+    "book": {
+      "title": "b3",
+      "author": "b3",
+      "rentals": [
+        {
+          "date": "2023-11-40",
+          "book": "b3",
+          "person": {
+            "json_class": "Student",
+            "id": 935,
+            "name": "s1",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": {
+              "json_class": "Classroom",
+              "label": "1",
+              "students": [
+                {
+                  "json_class": "Student",
+                  "id": 935,
+                  "name": "s1",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 498,
+                  "name": "s2",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 621,
+                  "name": "s3",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 31,
+                  "name": "s4",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 935,
+                  "name": "s1",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 498,
+                  "name": "s2",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 621,
+                  "name": "s3",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 31,
+                  "name": "s4",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 935,
+                  "name": "s1",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 498,
+                  "name": "s2",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 621,
+                  "name": "s3",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 31,
+                  "name": "s4",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 935,
+                  "name": "s1",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 498,
+                  "name": "s2",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 621,
+                  "name": "s3",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 31,
+                  "name": "s4",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "person": {
+      "json_class": "Student",
+      "id": 935,
+      "name": "s1",
+      "age": 0,
+      "parent_permission": true,
+      "classroom": {
+        "json_class": "Classroom",
+        "label": "1",
+        "students": [
+          {
+            "json_class": "Student",
+            "id": 935,
+            "name": "s1",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 498,
+            "name": "s2",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 621,
+            "name": "s3",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 31,
+            "name": "s4",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 935,
+            "name": "s1",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 498,
+            "name": "s2",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 621,
+            "name": "s3",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 31,
+            "name": "s4",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 935,
+            "name": "s1",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 498,
+            "name": "s2",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 621,
+            "name": "s3",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 31,
+            "name": "s4",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 935,
+            "name": "s1",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 498,
+            "name": "s2",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 621,
+            "name": "s3",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 31,
+            "name": "s4",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "2023-11-30",
+    "book": {
+      "title": "perro",
+      "author": "cascsa",
+      "rentals": [
+        {
+          "date": "2023-11-30",
+          "book": "perro",
+          "person": {
+            "json_class": "Student",
+            "id": 498,
+            "name": "s2",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": {
+              "json_class": "Classroom",
+              "label": "1",
+              "students": [
+                {
+                  "json_class": "Student",
+                  "id": 935,
+                  "name": "s1",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 498,
+                  "name": "s2",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 621,
+                  "name": "s3",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 31,
+                  "name": "s4",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 935,
+                  "name": "s1",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 498,
+                  "name": "s2",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 621,
+                  "name": "s3",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 31,
+                  "name": "s4",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 935,
+                  "name": "s1",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 498,
+                  "name": "s2",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 621,
+                  "name": "s3",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 31,
+                  "name": "s4",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 935,
+                  "name": "s1",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 498,
+                  "name": "s2",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 621,
+                  "name": "s3",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                },
+                {
+                  "json_class": "Student",
+                  "id": 31,
+                  "name": "s4",
+                  "age": 0,
+                  "parent_permission": true,
+                  "classroom": "1"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "person": {
+      "json_class": "Student",
+      "id": 498,
+      "name": "s2",
+      "age": 0,
+      "parent_permission": true,
+      "classroom": {
+        "json_class": "Classroom",
+        "label": "1",
+        "students": [
+          {
+            "json_class": "Student",
+            "id": 935,
+            "name": "s1",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 498,
+            "name": "s2",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 621,
+            "name": "s3",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 31,
+            "name": "s4",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 935,
+            "name": "s1",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 498,
+            "name": "s2",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 621,
+            "name": "s3",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 31,
+            "name": "s4",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 935,
+            "name": "s1",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 498,
+            "name": "s2",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 621,
+            "name": "s3",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 31,
+            "name": "s4",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 935,
+            "name": "s1",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 498,
+            "name": "s2",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 621,
+            "name": "s3",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          },
+          {
+            "json_class": "Student",
+            "id": 31,
+            "name": "s4",
+            "age": 0,
+            "parent_permission": true,
+            "classroom": "1"
+          }
+        ]
+      }
+    }
+  }
 ]

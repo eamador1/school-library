@@ -44,12 +44,7 @@ module SaveToFileModule
 
     new_rental = @rentals.map(&:to_hash)
     new_rental.each do |rental|
-      existing_rental = stored_rentals.find { |rent| rent['id'] == rental['id'] }
-      if existing_rental
-        existing_rental.merge!(rental)
-      else
-        stored_rentals << rental
-      end
+      stored_rentals << rental
     end
     rentals_json = JSON.pretty_generate(stored_rentals)
     File.write('rentals.json', rentals_json)
