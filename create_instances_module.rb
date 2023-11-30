@@ -63,7 +63,6 @@ module CreateInstancesModule
   end
 
   def create_a_rental
-
     puts 'Select a book from the following list by number:'
 
     file_book_json = list_all_books
