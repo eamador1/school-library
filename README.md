@@ -68,7 +68,7 @@ To make use of this project on the console, kindly run `ruby main.rb`
 
 - GitHub: [@eamador1](https://github.com/eamador1)
 - Twitter: [@hokieamador](https://twitter.com/hokieamador)
-- LinkedIn: [@hokiemador](https://linkedin.com/in/hokiemador)
+- LinkedIn: [@hokiemador](https://www.linkedin.com/in/hokieamador/)
 
 👤 **Esteban Palacios**
 
