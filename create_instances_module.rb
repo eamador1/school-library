@@ -129,7 +129,7 @@ module CreateInstancesModule
     save_rentals_to_file
   end
 
-  def     
+  def save_rentals_to_file
     stored_rentals = []
     if File.exist?('rentals.json')
       rentals_in_file = File.read('rentals.json')
