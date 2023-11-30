@@ -15,7 +15,7 @@ class Book
   def to_hash(*)
     {
       title: @title,
-      author: @author,
+      author: @author
       # rentals: @rentals.map(&:to_json)
     }
   end
