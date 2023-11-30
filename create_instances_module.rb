@@ -108,24 +108,19 @@ module CreateInstancesModule
   def create_a_rental
     file_book_json = list_all_books
     book_index = gets.chomp.to_i
-    puts 'book data: ', book_data = file_book_json[book_index]
-    puts 'select book: ', Book.new(
+    book_data = file_book_json[book_index]
+    select_book = Book.new(
       book_data['title'],
       book_data['author']
     )
 
     file_people_json = list_all_people
     person_index = gets.chomp.to_i
-    puts 'people data: ', person_data = file_people_json[person_index].to_hash
-    puts 'select person: ', selected_person = People.new(
-      person_data['name'],
-      person_data['age'],
-      parent_permission: person_data['parent_permission']
-    )
+   person_data = file_people_json[person_index]
     print 'Date: '
     date = gets.chomp
 
-    puts Rental.new(date, selected_book, selected_person)
+    @rentals << Rental.new(date, select_book, person_data)
     save_rentals_to_file
   end
 
@@ -138,9 +133,9 @@ module CreateInstancesModule
 
     new_rental = @rentals.map(&:to_hash)
     new_rental.each do |rental|
-      existing_person = stored_rentals.find { |p| p['id'] == rental['id'] }
-      if existing_person
-        existing_person.merge!(rental)
+      existing_rental = stored_rentals.find { |rent| rent['id'] == rental['id'] }
+      if existing_rental
+        existing_rental.merge!(rental)
       else
         stored_rentals << rental
       end

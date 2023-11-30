@@ -48,18 +48,16 @@ module DisplayModule
     print 'Enter person id: '
     person_id = gets.chomp.to_i
 
-    @rentals.select { |rental| rental.person.id == person_id }
-
     stored_rentals = []
 
     if File.exist?('rentals.json')
       existing_rentals_json = File.read('rentals.json')
-      JSON.parse(existing_rentals_json) unless existing_rentals_json.empty?
-      puts 'No rentals found for the given person id.'
-    else
-      stored_rentals.each_with_index do |rental, _index|
-        puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
-      end
+      stored_rentals = JSON.parse(existing_rentals_json) unless existing_rentals_json.empty?
+    end
+    @rentals = stored_rentals.select { |rental| rental['person']['id'] == person_id }
+
+    @rentals.each do |rental|
+      puts "Date: #{rental['date']}, Book: #{rental['book']['title']} by #{rental['book']['author']}"
     end
   end
 end

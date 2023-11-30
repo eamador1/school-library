@@ -15,8 +15,8 @@ class Book
   def to_hash(*)
     {
       title: @title,
-      author: @author
-      # rentals: @rentals.map(&:to_json)
+      author: @author,
+      rentals: @rentals.map { |rental| rental.to_hash(exclude_book: true) }
     }
   end
 
