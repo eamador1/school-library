@@ -29,12 +29,7 @@ module SaveToFileModule
     end
 
     new_books.each do |new_book|
-      existing_book = stored_books.find { |b| b['title'] == new_book['title'] }
-      if existing_book
-        existing_book.merge!(new_book)
-      else
-        stored_books << new_book
-      end
+      stored_books << new_book
     end
     json_data = JSON.pretty_generate(stored_books)
     File.write('books.json', json_data)
