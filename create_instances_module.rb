@@ -1,8 +1,8 @@
 require_relative 'display_module'
-require  'json'
+require 'json'
 
 module CreateInstancesModule
-include DisplayModule
+  include DisplayModule
   def create_a_person
     puts 'Do you want to create a student (1) or a Teacher (2)? [Input the number]: '
     person_type = gets.chomp
