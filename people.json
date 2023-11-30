@@ -1,0 +1,121 @@
+[
+  {
+    "json_class": "Student",
+    "id": 812,
+    "name": "s1",
+    "age": 0,
+    "parent_permission": true,
+    "classroom": {
+      "json_class": "Classroom",
+      "label": "1",
+      "students": [
+        {
+          "json_class": "Student",
+          "id": 812,
+          "name": "s1",
+          "age": 0,
+          "parent_permission": true,
+          "classroom": "1"
+        }
+      ]
+    }
+  },
+  {
+    "json_class": "Teacher",
+    "id": 263,
+    "name": "t1",
+    "age": 0,
+    "parent_permission": true,
+    "classroom": {
+      "json_class": "Classroom",
+      "label": "1",
+      "students": [
+        {
+          "json_class": "Student",
+          "id": 812,
+          "name": "s1",
+          "age": 0,
+          "parent_permission": true,
+          "classroom": "1"
+        }
+      ]
+    },
+    "specialization": "spec1"
+  },
+  {
+    "json_class": "Student",
+    "id": 323,
+    "name": "t2",
+    "age": 0,
+    "parent_permission": true,
+    "classroom": {
+      "json_class": "Classroom",
+      "label": "1",
+      "students": [
+        {
+          "json_class": "Student",
+          "id": 812,
+          "name": "s1",
+          "age": 0,
+          "parent_permission": true,
+          "classroom": "1"
+        },
+        {
+          "json_class": "Student",
+          "id": 812,
+          "name": "s1",
+          "age": 0,
+          "parent_permission": true,
+          "classroom": "1"
+        },
+        {
+          "json_class": "Student",
+          "id": 323,
+          "name": "t2",
+          "age": 0,
+          "parent_permission": true,
+          "classroom": "1"
+        }
+      ]
+    },
+    "specialization": null
+  },
+  {
+    "json_class": "Teacher",
+    "id": 768,
+    "name": "t3",
+    "age": 0,
+    "parent_permission": true,
+    "classroom": {
+      "json_class": "Classroom",
+      "label": "1",
+      "students": [
+        {
+          "json_class": "Student",
+          "id": 812,
+          "name": "s1",
+          "age": 0,
+          "parent_permission": true,
+          "classroom": "1"
+        },
+        {
+          "json_class": "Student",
+          "id": 812,
+          "name": "s1",
+          "age": 0,
+          "parent_permission": true,
+          "classroom": "1"
+        },
+        {
+          "json_class": "Student",
+          "id": 323,
+          "name": "t2",
+          "age": 0,
+          "parent_permission": true,
+          "classroom": "1"
+        }
+      ]
+    },
+    "specialization": "spec3"
+  }
+]

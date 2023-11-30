@@ -23,6 +23,22 @@ module DisplayModule
   end
 
   def list_all_people
+    if File.exist?('people.json')
+      people_json = File.read('people.json')
+      if people_json.empty?
+        puts 'The list is empty'
+      else
+        people_hash = JSON.parse(people_json)
+        @people = people_hash.map do |person|
+          if person['json_class'] == 'Student'
+            Student.from_hash(person, @classroom)
+          else
+            Teacher.from_hash(person)
+          end
+        end
+      end
+    end
+
     @people.each { |person| puts "#{person.class}: Name: #{person.name}, Id: #{person.id}, Age: #{person.age}" }
   end
 

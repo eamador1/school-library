@@ -18,4 +18,17 @@ class Student < Person
   def play_hooky
     '¯(ツ)/¯'
   end
+
+  def to_hash(exclude_classroom: false)
+    super.merge(classroom: exclude_classroom ? classroom.label : classroom.to_hash)
+  end
+
+  def self.from_hash(hash, classroom)
+    new(
+      hash['name'],
+      hash['age'],
+      classroom,
+      parent_permission: hash['parent_permission']
+    ).tap { |student| student.id = hash['id'] }
+  end
 end

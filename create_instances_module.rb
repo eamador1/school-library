@@ -40,7 +40,16 @@ module CreateInstancesModule
     File.write('people.json', people_json)
   end
 
+  def create_a_student(classroom = @classroom)
+    print 'Name: '
+    name = gets.chomp
 
+    print 'Age: '
+    age = gets.chomp.to_i
+    print 'Has parent permission? [Y/N]: '
+    parent_permission = gets.chomp.downcase == 'y'
+    Student.new(name, age, classroom, parent_permission: parent_permission)
+  end
 
   def create_a_teacher
     print 'Name: '
