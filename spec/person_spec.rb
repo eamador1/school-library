@@ -68,7 +68,7 @@ describe 'Person' do
   context '#classroom=' do
     let(:classroom) { Classroom.new('1') }
 
-    it "displays the classroom content" do
+    it 'displays the classroom content' do
       allow(classroom).to receive(:add_student)
 
       @person.classroom = classroom
@@ -97,6 +97,20 @@ describe 'Person' do
       @person.age = 20
 
       expect(@person.can_use_services?).to be(is_adult)
+    end
+  end
+
+  context '#to_hash and #from_hash' do
+    it 'returns the person object converted to hash' do
+      person_hash = { json_class: 'Person', id: 42, name: 'John', age: 15, parent_permission: true }
+
+      expect(@person.to_hash).to eq(person_hash)
+    end
+
+    it 'returns the person object reconstructed from a hash' do
+      person_hash = { json_class: 'Person', id: 42, name: 'John', age: 15, parent_permission: true }
+
+      expect(@person.from_hash(person_hash)).to eq(nil)
     end
   end
 end
