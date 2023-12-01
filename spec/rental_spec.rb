@@ -1,46 +1,78 @@
 require_relative 'spec_helper'
+require 'pry'
 
-RSpec.describe Rental do
-  let(:book_title) { 'The Great Gatsby' }
-  let(:author_name) { 'F. Scott Fitzgerald' }
-  let(:person_name) { 'John Doe' }
-  let(:rental_date) { '2023-01-01' }
-
-  let(:book) { Book.new(book_title, author_name) }
-  let(:person) { Person.new(person_name) }
-
-  subject(:rental) { described_class.new(rental_date, book, person) }
+describe 'Rental' do
+  before do
+    allow(Random).to receive(:rand).and_return(42)
+    @book = Book.new('1984', 'George Orwell')
+    @person = Person.new('John Doe', 30)
+  end
 
   describe '#initialize' do
-    it 'creates a rental with the specified date, associated book, and person' do
-      expect(rental.date).to eq(rental_date)
-      expect(rental.book).to eq(book)
-      expect(rental.person).to eq(person)
+    it 'creates a rental with a date, book, and person' do
+      rental = Rental.new('2023-09-05', @book, @person)
 
-      expect(book.rentals).to include(rental)
-      expect(person.rentals).to include(rental)
+      expect(rental.date).to eq('2023-09-05')
+      expect(rental.book).to eq(@book)
+      expect(rental.person).to eq(@person)
+    end
+
+    it 'adds the rental to the book and person' do
+      rental = Rental.new('2023-09-05', @book, @person)
+
+      expect(@book.rentals).to include(rental)
+      expect(@person.rentals).to include(rental)
+    end
+
+    it 'raises an error if book is missing' do
+      expect { Rental.new('2023-09-05', @person) }.to raise_error(ArgumentError)
+    end
+    it 'raises an error if person is missing' do
+      expect { Rental.new('2023-09-05', @book) }.to raise_error(ArgumentError)
+    end
+    it 'raises an error if date is missing' do
+      expect { Rental.new(@book, @person) }.to raise_error(ArgumentError)
     end
   end
 
-  describe '#book=' do
-    it 'updates the book association and adds the rental to the new book' do
-      new_book = Book.new('New Book', 'New Author')
-      rental.book = new_book
-
-      expect(rental.book).to eq(new_book)
-      expect(new_book.rentals).to include(rental)
-      expect(book.rentals).not_to include(rental)
+  describe '#to_hash and from_hash' do
+    it 'returns a hash representation of the rental' do
+      rental = Rental.new('2023-09-05', @book, @person)
+      rental_hash = { date: '2023-09-05',
+                      book: { title: '1984',
+                              author: 'George Orwell',
+                              rentals: [{ date: '2023-09-05', book: '1984',
+                                          person: {
+                                            json_class: 'Person', id: 42,
+                                            name: 'John Doe',
+                                            age: 30,
+                                            parent_permission: true
+                                          } }] },
+                      person: { json_class: 'Person', id: 42, name: 'John Doe', age: 30,
+                                parent_permission: true } }
+      expect(rental.to_hash).to eq(
+        rental_hash
+      )
     end
-  end
 
-  describe '#person=' do
-    it 'updates the person association and adds the rental to the new person' do
-      new_person = Person.new('New Person')
-      rental.person = new_person
-
-      expect(rental.person).to eq(new_person)
-      expect(new_person.rentals).to include(rental)
-      expect(person.rentals).not_to include(rental)
+    it 'receive a hash representation of the rental' do
+      binding.pry
+      rental = Rental.new('2023-09-05', @book, @person)
+      rental_hash = { date: '2023-09-05',
+                      book: { title: '1984',
+                              author: 'George Orwell',
+                              rentals: [{ date: '2023-09-05', book: '1984',
+                                          person: {
+                                            json_class: 'Person', id: 42,
+                                            name: 'John Doe',
+                                            age: 30,
+                                            parent_permission: true
+                                          } }] },
+                      person: { json_class: 'Person', id: 42, name: 'John Doe', age: 30,
+                                parent_permission: true } }
+      expect(rental.from_h).to eq(
+        rental_hash
+      )
     end
   end
 end
