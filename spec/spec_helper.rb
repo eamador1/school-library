@@ -1,2 +1,2 @@
-require_relative '../person.rb'
-require_relative '../book.rb'
+require_relative '../person'
+require_relative '../book'
