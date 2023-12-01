@@ -1,4 +1,5 @@
 require_relative 'spec_helper'
+require 'pry'
 
 describe 'Student' do
   before :each do
@@ -88,7 +89,23 @@ describe 'Student' do
     end
 
     it 'returns the student object reconstructed from a hash' do
-      expect(@student.from_hash(student_hash)).to eq(nil)
+      student_hash = { json_class: 'Student',
+                       id: 42,
+                       name: 'Jane',
+                       age: 12,
+                       parent_permission: true,
+                       classroom: { json_class: 'Classroom', label: '1',
+                                    students: [{ json_class: 'Student',
+                                                 id: 42, name: 'Jane',
+                                                 age: 12,
+                                                 parent_permission: true,
+                                                 classroom: '1' }] } }
+      student_from_hash = Student.from_hash(student_hash, @classroom)
+
+      expect(student_from_hash).to be_a(Student)
+      expect(student_from_hash.name).to eql(student_hash['name'])
+      expect(student_from_hash.age).to eql(student_hash['age'])
+      expect(student_from_hash.id).to eql(student_hash['id'])
     end
   end
 end
