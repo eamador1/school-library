@@ -1,5 +1,4 @@
 require_relative 'spec_helper'
-require 'pry'
 
 describe 'Person' do
   before :each do
@@ -32,6 +31,12 @@ describe 'Person' do
       @person.age = 20
 
       expect(@person.age).to eql(person_age)
+    end
+  end
+
+  context '#parent_permission' do
+    it 'displays the parent permission of the person' do
+      expect(@person.parent_permission).to be(true)
     end
   end
 
@@ -75,7 +80,6 @@ describe 'Person' do
 
       expect(@person.classroom).to eq(classroom)
     end
-
 
     it 'updates the classroom property' do
       label = 'Unknown'
