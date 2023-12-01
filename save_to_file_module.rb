@@ -1,5 +1,3 @@
-require 'pry'
-
 module SaveToFileModule
   def save_people_to_file
     stored_people = []
