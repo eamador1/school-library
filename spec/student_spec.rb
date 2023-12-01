@@ -73,11 +73,7 @@ describe 'Student' do
   end
 
   context '#to_hash and #from_hash' do
-    student_hash = { json_class: 'Student',
-                     id: 42,
-                     name: 'Jane',
-                     age: 12,
-                     parent_permission: true,
+    student_hash = { json_class: 'Student', id: 42, name: 'Jane', age: 12, parent_permission: true,
                      classroom: { json_class: 'Classroom', label: '1',
                                   students: [{ json_class: 'Student',
                                                id: 42, name: 'Jane',
