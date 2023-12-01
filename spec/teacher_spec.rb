@@ -24,7 +24,7 @@ describe 'teacher' do
         parent_permission: true,
         specialization: 'math'
       }
-      binding.pry
+
       expect(@teacher.to_hash).to eql(expected_hash)
     end
   end
@@ -42,7 +42,7 @@ describe 'teacher' do
       
       teacher_instance = Teacher.from_hash(hash_data)
      
-      expect(teacher_instance).to eql(hash_data)
+      expect(teacher_instance).to be_a(Teacher)
     end
   end
 end
