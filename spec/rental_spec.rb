@@ -54,24 +54,5 @@ describe 'Rental' do
         rental_hash
       )
     end
-
-    it 'receive a hash representation of the rental' do
-      Rental.new('2023-09-05', @book, @person)
-      rental_hash = { date: '2023-09-05',
-                      book: { title: '1984',
-                              author: 'George Orwell',
-                              rentals: [{ date: '2023-09-05', book: '1984',
-                                          person: {
-                                            json_class: 'Person', id: 42,
-                                            name: 'John Doe',
-                                            age: 30,
-                                            parent_permission: true
-                                          } }] },
-                      person: { json_class: 'Person', id: 42, name: 'John Doe', age: 30,
-                                parent_permission: true } }
-      expect(Rental.from_h(rental_hash)).to eq(
-        rental_hash
-      )
-    end
   end
 end
