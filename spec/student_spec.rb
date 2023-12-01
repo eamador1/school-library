@@ -41,7 +41,6 @@ describe 'Student' do
     end
   end
 
-
   context '#classroom=' do
     let(:classroom) { Classroom.new('1') }
 
@@ -52,7 +51,6 @@ describe 'Student' do
 
       expect(@student.classroom).to eq(classroom)
     end
-
 
     it 'updates the classroom property' do
       label = 'Unknown'

@@ -81,7 +81,6 @@ describe 'Person' do
       expect(@person.classroom).to eq(classroom)
     end
 
-
     it 'updates the classroom property' do
       label = 'Unknown'
 
