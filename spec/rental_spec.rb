@@ -56,8 +56,7 @@ describe 'Rental' do
     end
 
     it 'receive a hash representation of the rental' do
-      binding.pry
-      rental = Rental.new('2023-09-05', @book, @person)
+      Rental.new('2023-09-05', @book, @person)
       rental_hash = { date: '2023-09-05',
                       book: { title: '1984',
                               author: 'George Orwell',
@@ -70,7 +69,7 @@ describe 'Rental' do
                                           } }] },
                       person: { json_class: 'Person', id: 42, name: 'John Doe', age: 30,
                                 parent_permission: true } }
-      expect(rental.from_h).to eq(
+      expect(Rental.from_h(rental_hash)).to eq(
         rental_hash
       )
     end
