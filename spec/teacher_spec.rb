@@ -1,7 +1,6 @@
 require 'pry'
 require_relative 'spec_helper'
 
-
 describe 'teacher' do
   before(:each) do
     allow(Random).to receive(:rand).and_return(387)
@@ -39,9 +38,9 @@ describe 'teacher' do
         parent_permission: true,
         specialization: 'math'
       }
-      
+
       teacher_instance = Teacher.from_hash(hash_data)
-     
+
       expect(teacher_instance).to be_a(Teacher)
     end
   end
