@@ -32,6 +32,9 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+# Set the EnforcedStyle to 'single_quotes' for StringLiterals
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
 
 Layout/HashAlignment:
   EnforcedColonStyle: key

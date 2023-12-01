@@ -10,7 +10,6 @@
   - [Setup](#setup)
   - [Usage](#usage)
 - [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -18,7 +17,7 @@
 
 
 # 📖 [SCHOOL-LIBRARY] <a name="about-project"></a>
-In this project, we preserve the data from our app and load preserved data on startup.
+In this project we add unit tests to your codebase, specifically to our classes.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -28,9 +27,9 @@ In this project, we preserve the data from our app and load preserved data on st
 
 ### Key Features <a name="key-features"></a>
 
-- **[CREATE AND STORE IN FILE NAMED books.json**
-- **[CREATE AND STORE IN FILE NAMED people.json]**
-- **[CREATE AND STORE IN FILE NAMED rentals.json]**
+- **[CREATE SPEC FOLDER**
+- **[CREATE TESTS FOR ALL CLASSES]**
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -81,12 +80,6 @@ To make use of this project on the console, kindly run `ruby main.rb`
 - GitHub: [@Joramot](https://github.com/joramot)
 - Twitter: [@El_rulis](https://twitter.com/el_rulis)
 - LinkedIn: [jose-RM](https://linkedin.com/in/jose-RM)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🔭 Future Features <a name="future-features"></a>
-
-- [ ] **[Unit Tests]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

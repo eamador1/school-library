@@ -19,22 +19,4 @@ class Book
       rentals: @rentals.map { |rental| rental.to_hash(exclude_book: true) }
     }
   end
-
-  def to_json(*)
-    {
-      title: @title,
-      author: @author,
-      rentals: @rentals.map(&:to_json)
-    }.to_json
-  end
-
-  def self.from_json(json_string)
-    data = JSON.parse(json_string)
-    book = new(data['title'], data['author'])
-    data['rentals'].each do |rental_data|
-      rental = Rental.from_json(rental_data)
-      book.rentals << rental
-    end
-    book
-  end
 end
